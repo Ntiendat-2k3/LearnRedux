@@ -1,0 +1,24 @@
+import { useState } from "react";
+
+const TodoListNoRedux = () => {
+  const [todos, setTodos] = useState([]);
+  const [task, setTask] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
+  const [editId, setEditId] = useState(null);
+
+  return (
+    <div>
+      <h1>Todo List without No Redux</h1>
+      <form action="">
+        <input type="text" placeholder="Add a new todo" />
+        <button type="submit">{editId ? "Edit" : "Add"}</button>
+      </form>
+
+      <div>
+        <h1>Todo List</h1>
+      </div>
+    </div>
+  );
+};
+
+export default TodoListNoRedux;

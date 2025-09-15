@@ -1,0 +1,13 @@
+const TodoList = () => {
+  return (
+    <div>
+      <h1>Todo List</h1>
+      <form action="" onSubmit={handleSubmit}>
+        <input type="text" placeholder="Add a new todo" />
+        <button type="submit">Add Todo</button>
+      </form>
+    </div>
+  );
+};
+
+export default TodoList;

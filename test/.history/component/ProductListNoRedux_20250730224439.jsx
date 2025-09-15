@@ -1,0 +1,14 @@
+const ProductListNoRedux = () => {
+  return (
+    <div>
+      <form action="">
+        <h1>Product List (No Redux)</h1>
+        <input type="text" name="name" placeholder="Ten san pham" />
+        <input type="text" name="price" placeholder="Gia san pham" />
+        <input type="text" name="description" placeholder="Mo ta san pham" />
+      </form>
+    </div>
+  );
+};
+
+export default ProductListNoRedux;

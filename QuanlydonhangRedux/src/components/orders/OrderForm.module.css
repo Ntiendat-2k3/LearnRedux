@@ -1,0 +1,16 @@
+.card { margin-bottom: 16px; }
+
+.itemsRow {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .itemsRow { grid-template-columns: 1fr 2fr 1fr 1fr; }
+  .itemsRow > button { grid-column: 1 / -1; justify-self: start; }
+}
+
+.footer { margin-top: 8px; }
+.total { margin-top: 8px; font-weight: 600; }
