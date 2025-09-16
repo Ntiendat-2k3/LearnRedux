@@ -1,0 +1,451 @@
+/* 
+ * styles.css: phong cách dark, tối giản.
+ * Lưu ý: Đây là CSS thuần để bạn copy nhanh. Có thể thay Tailwind/shadcn nếu muốn.
+ */
+:root {
+     --bg: #0b0d12;
+     --panel: #11161e;
+     --muted: #96a1b3;
+     --text: #e7edf5;
+     --primary: #6ea8fe;
+     --green: #10b981;
+     --red: #ef4444;
+     color-scheme: dark;
+}
+
+* {
+     box-sizing: border-box
+}
+
+html,
+body,
+#root {
+     height: 100%
+}
+
+body {
+     margin: 0;
+     background: linear-gradient(180deg, #0d1117, #0b0d12 30%);
+     color: var(--text);
+     font: 14px/1.5 system-ui, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial
+}
+
+button,
+input,
+select,
+textarea {
+     font: inherit;
+     color: inherit
+}
+
+.app-root {
+     display: grid;
+     grid-template-columns: 280px 1fr;
+     gap: 16px;
+     padding: 16px;
+     min-height: 100%
+}
+
+.sidebar {
+     background: var(--panel);
+     border: 1px solid #1f2937;
+     border-radius: 16px;
+     padding: 16px;
+     position: sticky;
+     top: 16px;
+     height: calc(100vh - 32px)
+}
+
+.content {
+     display: grid;
+     grid-template-rows: auto 1fr auto;
+     gap: 16px
+}
+
+.toolbar,
+.main,
+.footer {
+     background: var(--panel);
+     border: 1px solid #1f2937;
+     border-radius: 16px;
+     padding: 16px
+}
+
+.side-title {
+     margin: 0 0 8px 0;
+     font-weight: 700;
+     letter-spacing: .3px
+}
+
+.project-list {
+     list-style: none;
+     padding: 0;
+     margin: 0 0 8px 0
+}
+
+.project-item {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     padding: 8px;
+     border-radius: 10px;
+     cursor: pointer;
+     color: #cdd6e5
+}
+
+.project-item:hover {
+     background: #0f172a
+}
+
+.project-item.active {
+     background: #0b1220;
+     outline: 1px solid #243142
+}
+
+.project-item .dot {
+     width: 8px;
+     height: 8px;
+     border-radius: 99px;
+     display: inline-block
+}
+
+.add-project {
+     display: flex;
+     gap: 8px
+}
+
+.add-project input {
+     flex: 1;
+     padding: 8px;
+     border-radius: 10px;
+     border: 1px solid #263143;
+     background: #0b1220
+}
+
+.add-project button {
+     padding: 8px 10px;
+     border-radius: 10px;
+     border: 1px solid #243142;
+     background: #101828
+}
+
+.toolbar-grid {
+     display: grid;
+     grid-template-columns: 1fr repeat(3, 140px) auto auto;
+     gap: 8px;
+     align-items: center
+}
+
+.search {
+     padding: 8px 10px;
+     border-radius: 10px;
+     border: 1px solid #263143;
+     background: #0b1220
+}
+
+.checkbox {
+     display: flex;
+     align-items: center;
+     gap: 6px;
+     opacity: .9
+}
+
+.btn-row {
+     display: flex;
+     gap: 6px;
+     justify-self: end
+}
+
+.btn-row button,
+.import-btn {
+     border: 1px solid #243142;
+     background: #0f172a;
+     border-radius: 10px;
+     padding: 6px 10px;
+     display: inline-flex;
+     align-items: center;
+     gap: 6px
+}
+
+.import-btn {
+     cursor: pointer
+}
+
+.tag-filter {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 6px;
+     grid-column: 1/-1;
+     margin-top: 8px
+}
+
+.tag-chip {
+     display: inline-flex;
+     align-items: center;
+     gap: 6px;
+     border: 1px dashed #2a3a52;
+     padding: 4px 8px;
+     border-radius: 999px;
+     color: #9fb1cc
+}
+
+.tag-chip.active {
+     background: #0b1220;
+     color: #d2e1ff
+}
+
+.list-header {
+     display: flex;
+     justify-content: flex-end;
+     margin-bottom: 8px
+}
+
+.primary {
+     background: linear-gradient(90deg, #3b82f6, #22d3ee);
+     border: none;
+     color: white;
+     border-radius: 10px;
+     padding: 8px 12px
+}
+
+.todo-list {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+     display: grid;
+     gap: 8px
+}
+
+.empty {
+     opacity: .6;
+     text-align: center;
+     padding: 24px;
+     border: 1px dashed #263143;
+     border-radius: 12px
+}
+
+.todo-item {
+     display: grid;
+     grid-template-columns: auto 1fr auto;
+     gap: 12px;
+     align-items: flex-start;
+     background: #0b1220;
+     border: 1px solid #1d283a;
+     border-radius: 12px;
+     padding: 10px
+}
+
+.todo-item.done {
+     opacity: .65
+}
+
+.todo-item .check {
+     border: none;
+     background: transparent;
+     color: #9fb1cc
+}
+
+.todo-item .title-row {
+     display: flex;
+     align-items: center;
+     gap: 8px
+}
+
+.todo-item .title {
+     font-weight: 600
+}
+
+.todo-item .desc {
+     opacity: .9;
+     margin-top: 4px;
+     color: #b9c7dc
+}
+
+.todo-item .tags {
+     display: flex;
+     gap: 6px;
+     margin-top: 6px
+}
+
+.todo-item .tag {
+     background: #0f172a;
+     border: 1px solid #1f2d45;
+     border-radius: 999px;
+     padding: 2px 8px;
+     display: inline-flex;
+     gap: 6px;
+     align-items: center
+}
+
+.todo-item .badge {
+     background: #0f172a;
+     border: 1px solid #1f2d45;
+     border-radius: 8px;
+     padding: 2px 6px;
+     display: inline-flex;
+     gap: 6px;
+     align-items: center;
+     font-size: 12px;
+     color: #cfe0ff
+}
+
+.todo-item .badge.p1 {
+     border-color: #1f4a2e
+}
+
+.todo-item .badge.p2 {
+     border-color: #334155
+}
+
+.todo-item .badge.p3 {
+     border-color: #5b2338
+}
+
+.todo-item .actions {
+     display: flex;
+     gap: 6px
+}
+
+.todo-item .actions .icon {
+     background: #0f172a;
+     border: 1px solid #1f2d45;
+     border-radius: 10px;
+     padding: 6px
+}
+
+.line {
+     text-decoration: line-through;
+     opacity: .7
+}
+
+.modal-backdrop {
+     position: fixed;
+     inset: 0;
+     background: rgba(0, 0, 0, .6);
+     display: grid;
+     place-items: center;
+     padding: 16px;
+     z-index: 50
+}
+
+.modal {
+     background: #0b1220;
+     border: 1px solid #1f2937;
+     border-radius: 16px;
+     padding: 16px;
+     min-width: min(720px, 96vw)
+}
+
+.form-grid {
+     display: grid;
+     gap: 8px
+}
+
+.form-grid input,
+.form-grid textarea,
+.form-grid select {
+     background: #0b1220;
+     border: 1px solid #243142;
+     border-radius: 10px;
+     padding: 8px
+}
+
+.form-grid textarea {
+     min-height: 90px
+}
+
+.form-grid .row {
+     display: grid;
+     grid-template-columns: 100px 1fr;
+     gap: 8px;
+     align-items: center
+}
+
+.subtasks .sub-add {
+     display: flex;
+     gap: 8px
+}
+
+.subtasks ul {
+     list-style: none;
+     margin: 8px 0 0;
+     padding: 0;
+     display: grid;
+     gap: 6px
+}
+
+.subtasks li {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: #0f172a;
+     border: 1px solid #1f2d45;
+     border-radius: 10px;
+     padding: 6px 8px
+}
+
+.actions {
+     display: flex;
+     gap: 8px;
+     justify-content: flex-end;
+     margin-top: 8px
+}
+
+.stats {
+     display: flex;
+     gap: 12px;
+     opacity: .85
+}
+
+.proj-editor {
+     display: flex;
+     gap: 8px;
+     margin-top: 8px
+}
+
+.proj-editor input {
+     padding: 6px;
+     border-radius: 8px;
+     border: 1px solid #263143;
+     background: #0b1220
+}
+
+
+/* Tăng độ tương phản cho input/select trong toolbar */
+.toolbar-grid select,
+.toolbar-grid .search {
+     color: #e7edf5;
+     /* màu chữ sáng, dễ đọc */
+     background-color: #0f172a;
+     /* nền tối hơn một chút để nổi chữ */
+     border: 1px solid #334155;
+     /* viền rõ hơn */
+     opacity: 1;
+     /* đề phòng bị thừa opacity từ nơi khác */
+}
+
+/* Vòng sáng khi focus để dễ thấy */
+.toolbar-grid select:focus,
+.toolbar-grid .search:focus {
+     outline: 2px solid #3b82f6;
+     outline-offset: 2px;
+}
+
+/* Màu menu dropdown (tùy trình duyệt, nhưng đa số sẽ áp dụng) */
+.toolbar-grid select option {
+     color: #e7edf5;
+     background-color: #0b1220;
+}
+
+/* Safari/Chromium đôi khi không dùng color mà dùng -webkit-text-fill-color */
+input,
+select,
+textarea {
+     -webkit-text-fill-color: #e7edf5;
+}
+
+/* Placeholder của ô search cũng rõ ràng hơn */
+.search::placeholder {
+     color: #94a3b8;
+     opacity: 1;
+}
